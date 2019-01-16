@@ -14,8 +14,6 @@ describe('flow parser parses correctly', () => {
 
       expect(data).to.have.keys(['blocks', 'links', 'forks', 'tree']);
 
-      expect(data).to.have.keys(['blocks', 'links', 'forks', 'tree']);
-
       expect(data.blocks)
         .to.be.a('array')
         .to.have.lengthOf(4);

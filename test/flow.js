@@ -28,7 +28,6 @@ describe('flow parser parses correctly', () => {
 
   it ('creates correct #id object structure', () => {
       expect(data.blocks[1]).to.have.property('id', 'foo');
-
   })
 
 })

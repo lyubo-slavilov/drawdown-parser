@@ -1,5 +1,3 @@
-'use babel';
-
 import { FlowParser } from './FlowParser';
 import { GraphParser } from './GraphParser';
 

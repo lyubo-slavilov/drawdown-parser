@@ -1,5 +1,3 @@
-// 'use babel';
-
 import { Parser } from './Parser'
 import md5 from 'md5';
 

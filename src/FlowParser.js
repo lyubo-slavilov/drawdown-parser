@@ -1,4 +1,3 @@
-'use babel';
 import { Parser } from './Parser';
 
 const PIPE = '-';

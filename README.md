@@ -57,7 +57,25 @@ const renderer = new Renderer();
 
 renderer.render(document.body, diagramObject);
 ```
+The important bit from the perspective of the parser here is:
 
+```javascript
+const diagramObject = factory('flow').parseText(script);
+```
+
+As you see we are using a  `Parser Factory` in order to instantiate our parser. Once we have it we can call the `parseText()` method to produce the object representation of the diagram.
+
+The above code can be written more verbose like this:
+```javascript
+import { factory } from 'drawdon-parser';
+
+/* ... */
+
+const flowParser = factory('flow');
+const diagramObject = flowParser.parseText(script);
+
+/* ... */
+```
 ## API
 Sorry. It is in TODO.
 

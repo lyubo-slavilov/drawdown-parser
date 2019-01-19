@@ -1,10 +1,10 @@
 # Drawdown Parser
 Parser for Drawdown markup.
 
-Let say you typing a lot of documentation in Markdown format, and you always feel stupid when you have to draw some diagrams in completly different application. Thats why this parser exists. Now you can type your diagrams directly in your markdown and with the right tools and plugins your IDE can visualize them in shmancy-fancy way.
+Let say you typing a lot of documentation in Markdown format, and you always feel stupid when you have to draw  diagrams in completely different application. That's why this parser exists. Now you can type your diagrams directly in your markdown and with the right tools and plugins your IDE can visualize them in a shmancy-fancy way.
 
 ## Syntax example
-Since this drawdown "language" is a garage invention I am not going to go into big detils here but rather I will provide you an example of Flow chart syntax
+Since this drawdown "language" is a garage invention I am not going to go into big details here but rather I will provide you an example of Flow chart syntax
 
 In your markdown you can open block code
 
@@ -18,7 +18,7 @@ In your markdown you can open block code
   - Yes:
     - Then don't worry.
   - No:
-    - Well. THan don't worry
+    - Well\. Then don't worry.
 - No:
   - Don't worry.
 ``'

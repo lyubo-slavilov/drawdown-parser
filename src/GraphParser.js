@@ -146,7 +146,7 @@ export class GraphParser extends Parser {
       throw `Unexpected token of type ${firstToken.type}`;
     }
 
-    node = {
+    let node = {
       id: md5(firstToken.content),
       content: firstToken.content,
       blockType: 'node'

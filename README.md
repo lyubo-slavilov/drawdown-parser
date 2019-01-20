@@ -1,10 +1,10 @@
 # Drawdown Parser
 Parser for Drawdown markup.
 
-Let say you typing a lot of documentation in Markdown format, and you always feel stupid when you have to draw  diagrams in completely different application, export images and link them back into your Markdown document. That's why this parser exists. Now you can type your diagrams directly in your markdown and with the right tools and plugins your IDE can visualize them in a shmancy-fancy way. On top of the pretty easy diagram creation you will get real versioning of your documentation.
+Let's say you're typing a lot of documentation in Markdown format and you always feel stupid when you have to draw diagrams in а completely different application, export images and link them back into your Markdown document. That's why this parser exists. Now you can type your diagrams directly in your markdown and with the right tools and plugins your IDE can visualize them in a shmancy-fancy way. On top of the pretty easy diagram creation you will get real versioning of your documentation.
 
 ## Syntax example
-Since this drawdown "language" is a garage invention, we are not go into big details, but instead let's look this example of Flow chart syntax
+Since this drawdown "language" is a garage invention, we are not going into big details, instead let's look at this example of Flow chart syntax.
 
 In your markdown you can open block code 
 
@@ -14,7 +14,7 @@ In your markdown you can open block code
     - Hello.
     - Do you have problems?
     - Yes:
-      - Can you do something about?
+      - Can you do something about them?
       - Yes:
         - Then don't worry.
       - No:
@@ -24,7 +24,7 @@ In your markdown you can open block code
 
     ```
 
-With proper use of the parser and the dedicated [drawdown renderer][6f03d088] this can produce an interactive SVG diagram which will look something like:
+With the proper use of the parser and the dedicated [drawdown renderer][6f03d088] this can produce an interactive SVG diagram which will look something like:
 
 [6f03d088]: https://github.com/lyubo-slavilov/drawdown-svg-render "drawdown-svg-render"
 
@@ -39,13 +39,13 @@ $ npm install drawdown-parser --save
 ```
 
 ## Usage
-Let say you already installed the [drawdown renderer][6f03d088]
+Let's say you had already installed the [drawdown renderer][6f03d088]
 
 ```bash
 $ npm install drawdown-svg-render --save
 ```
 
-And let say somehow you already extracted the `block code` for the drawdown scripts. What you can do with the parser is:
+And let's say somehow you had already extracted the `block code` for the drawdown scripts. What you can do with the parser is:
 
 ```javascript
 import { factory } from 'drawdown-parser';

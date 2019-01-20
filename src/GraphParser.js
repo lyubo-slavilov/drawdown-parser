@@ -36,7 +36,7 @@ export class GraphParser extends Parser {
             type: TOKEN_NODE,
             content: buff
           });
-          openArrow = {lf: true, style: '-'}
+          openArrow = {lh: true, style: '-'}
         }): continue;
 
         case this.tryToken(ARRW_LH_C, buff => {
@@ -45,7 +45,7 @@ export class GraphParser extends Parser {
             type: TOKEN_NODE,
             content: buff
           });
-          openArrow = {lf: true, style: '~'}
+          openArrow = {lh: true, style: '~'}
         }): continue;
 
         case this.tryToken(ARRW_RH, buff => {
@@ -82,10 +82,10 @@ export class GraphParser extends Parser {
             openArrow = null;
           } else {
             this.expected = [ARRW_RH, ARRW_TALE];
-            openArrow = {lf: false, style: '-'}
+            openArrow = {lh: false, style: '-'}
             this.addToken({
               type: TOKEN_NODE,
-              content: buff
+              content: buff.trim()
             })
           }
         }): continue;
@@ -102,10 +102,10 @@ export class GraphParser extends Parser {
             openArrow = null;
           } else {
             this.expected = [ARRW_RH_C, ARRW_TALE_C];
-            openArrow = {lf: false, style: '~'}
+            openArrow = {lh: false, style: '~'}
             this.addToken({
               type: TOKEN_NODE,
-              content: buff
+              content: buff.trim()
             })
           }
         }): continue;
@@ -115,7 +115,7 @@ export class GraphParser extends Parser {
           this.readIndentation(); //useless
           this.addToken({
             type: TOKEN_NODE,
-            content: buff
+            content: buff.trim()
           });
           this.addToken({
             type: TOKEN_EOL
@@ -166,7 +166,10 @@ export class GraphParser extends Parser {
           let link =  {
             source: lastNode,
             target: null,
-            ... token
+            lh: token.lh,
+            rh: token.rh,
+            label: token.label,
+            style: token.style
           }
           diagram.links.push(link);
           lastLink = link;

@@ -34,7 +34,7 @@ export class GraphParser extends Parser {
           this.expected = [ARRW_RH, ARRW_TALE];
           this.addToken({
             type: TOKEN_NODE,
-            content: buff
+            content: buff.trim()
           });
           openArrow = {lh: true, style: '-'}
         }): continue;
@@ -43,14 +43,14 @@ export class GraphParser extends Parser {
           this.expected = [ARRW_RH_C, ARRW_TALE_C];
           this.addToken({
             type: TOKEN_NODE,
-            content: buff
+            content: buff.trim()
           });
           openArrow = {lh: true, style: '~'}
         }): continue;
 
         case this.tryToken(ARRW_RH, buff => {
           this.expected = [EOL];
-          openArrow.label = buff
+          openArrow.label = buff.trim()
           openArrow.rh = true;
           this.addToken({
             type: TOKEN_LINK,
@@ -155,7 +155,7 @@ export class GraphParser extends Parser {
     diagram.blocks.push(node);
 
     let lastNode = node;
-    let openedRelNode = node;
+    let relOpened = true;
     let lastLink = null;
 
     for (let token of this.tokens) {
@@ -188,16 +188,16 @@ export class GraphParser extends Parser {
             diagram.blocks.push(node);
           }
 
-          if (openedRelNode) {
+          if (relOpened) {
             lastLink.target = node;
           } else {
-            openedRelNode = node;
+            relOpened = true;
           }
           lastNode = node;
         break;
 
         case TOKEN_EOL:
-          openedRelNode = null;
+          relOpened = false;
         break;
       }
     }

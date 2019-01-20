@@ -184,7 +184,10 @@ export class FlowParser extends Parser {
               diagram.links.push({
                 source: latestBlock,
                 target: null,
-                label: latestNode.type == NODE_CASE ? latestNode.content : ''
+                label: latestNode.type == NODE_CASE ? latestNode.content : '',
+                lh: false,
+                rh: true,
+                style: '-'
               })
             } else {
               diagram.forks.push({
@@ -207,7 +210,10 @@ export class FlowParser extends Parser {
               diagram.links.push({
                 source: latestBlock,
                 target: node,
-                label: latestNode.type == NODE_CASE ? latestNode.content : ''
+                label: latestNode.type == NODE_CASE ? latestNode.content : '',
+                lh: false,
+                rh: true,
+                style: '-'
               });
               latestBlock = node;
               let treeNode = {
@@ -241,7 +247,10 @@ export class FlowParser extends Parser {
           case NODE_WRRA:
             diagram.links.push({
               source: null, //wait for the next block id
-              target: latestBlock
+              target: latestBlock,
+              lh: false,
+              rh: true,
+              style: '-'
             });
             break;
 

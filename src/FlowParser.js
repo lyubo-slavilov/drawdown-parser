@@ -81,7 +81,7 @@ export class FlowParser extends Parser {
         }): continue;
 
         case this.tryToken(CASE, buff => {
-          this.expected = [EOL] //TODO LEFTOVERS
+          this.expected = [EOL, ARRW] //TODO LEFTOVERS
           this.addToken({
             type: NODE_CASE,
             indent: indentation.length,
@@ -129,7 +129,7 @@ export class FlowParser extends Parser {
     let tree = {
       children: []
     };
-
+    console.log(this.tokens.map(a => a));
     let blocksMap = new Map();
 
     //Handle first node
@@ -180,7 +180,8 @@ export class FlowParser extends Parser {
 
           case NODE_ARRW :
             //TODO varify latestNode is a BLOCK
-            if (eolOpen) {
+
+            if (eolOpen || latestNode.type == NODE_CASE) {
               diagram.links.push({
                 source: latestBlock,
                 target: null,

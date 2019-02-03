@@ -1,6 +1,6 @@
 {
   "name": "drawdown-parser",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Parser for drawdown diagrams in markdown files",
   "main": "lib/Factory.js",
   "scripts": {

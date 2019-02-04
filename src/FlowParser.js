@@ -129,7 +129,6 @@ export class FlowParser extends Parser {
     let tree = {
       children: []
     };
-    console.log(this.tokens.map(a => a));
     let blocksMap = new Map();
 
     //Handle first node

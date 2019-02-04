@@ -1,5 +1,6 @@
 import { FlowParser } from './FlowParser';
 import { GraphParser } from './GraphParser';
+import { SequenceParser } from './SequenceParser';
 
 const createdParsers = {};
 
@@ -21,6 +22,8 @@ function createParser(diagramType) {
       return new FlowParser();
     case 'graph':
       return new GraphParser();
+    case 'sequence':
+      return new SequenceParser();
     default:
       throw `Unknown Drawdown diagram "${diagramType}"`;
   }
